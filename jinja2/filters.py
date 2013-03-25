@@ -17,7 +17,7 @@ from jinja2.utils import Markup, escape, pformat, urlize, soft_unicode, \
      unicode_urlencode
 from jinja2.runtime import Undefined
 from jinja2.exceptions import FilterArgumentError
-
+from json import dumps as json_encode
 
 _word_re = re.compile(r'\w+(?u)')
 
@@ -824,5 +824,6 @@ FILTERS = {
     'groupby':              do_groupby,
     'safe':                 do_mark_safe,
     'xmlattr':              do_xmlattr,
-    'urlencode':            do_urlencode
+    'urlencode':            do_urlencode,
+    'json_encode':          json_encode
 }
