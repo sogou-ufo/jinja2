@@ -752,6 +752,9 @@ def do_reverse(value):
         except TypeError:
             raise FilterArgumentError('argument must be iterable')
 
+def do_raw(value):
+    return value
+
 
 @environmentfilter
 def do_attr(environment, obj, name):
@@ -825,5 +828,6 @@ FILTERS = {
     'safe':                 do_mark_safe,
     'xmlattr':              do_xmlattr,
     'urlencode':            do_urlencode,
-    'json_encode':          json_encode
+    'json_encode':          json_encode,
+    'raw':                  do_raw
 }
