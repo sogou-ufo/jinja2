@@ -755,6 +755,21 @@ def do_reverse(value):
 def do_raw(value):
     return value
 
+def do_split(value , sep=None):
+    """
+    
+    Arguments:
+    - `value`:
+    """
+    if sep=="":
+        result = []
+        for i in value:
+            result.append(i)
+        return result
+    else:
+        return value.split(sep)
+    
+
 
 @environmentfilter
 def do_attr(environment, obj, name):
@@ -829,5 +844,6 @@ FILTERS = {
     'xmlattr':              do_xmlattr,
     'urlencode':            do_urlencode,
     'json_encode':          json_encode,
-    'raw':                  do_raw
+    'raw':                  do_raw,
+    'split':                do_split
 }
