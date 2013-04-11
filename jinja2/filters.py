@@ -768,6 +768,18 @@ def do_split(value , sep=None):
         return result
     else:
         return value.split(sep)
+
+def do_substring(value, begin, end=None):
+    """
+    
+    Arguments:
+    - `value`:
+    - `from`:
+    - `to`:
+    """
+    if not end:
+        end = len(value)
+    return value[int(begin):int(end)]
     
 
 
@@ -845,5 +857,6 @@ FILTERS = {
     'urlencode':            do_urlencode,
     'json_encode':          json_encode,
     'raw':                  do_raw,
-    'split':                do_split
+    'split':                do_split,
+    'substring':            do_substring
 }
